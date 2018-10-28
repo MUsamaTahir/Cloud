@@ -76,16 +76,23 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_diary) {
             // Handle the camera action
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new DiaryFragment()).commit();
         } else if (id == R.id.nav_gallery) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new GalleryFragment()).commit();
         } else if (id == R.id.nav_about) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new AboutFragment()).commit();
         } else if (id == R.id.nav_location) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new LocationsFragment()).commit();
         } else if (id == R.id.nav_reviews) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new ReviewFragment()).commit();
         } else if (id == R.id.nav_wishlist) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new WishlistFragment()).commit();
         }
         else if (id == R.id.nav_share) {
 
