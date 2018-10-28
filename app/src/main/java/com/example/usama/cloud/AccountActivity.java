@@ -44,7 +44,7 @@ public class AccountActivity extends AppCompatActivity {
     private void updateUI()
     {
         Toast.makeText(AccountActivity.this, "You are logged out.",Toast.LENGTH_SHORT);
-        Intent intent = new Intent(AccountActivity.this, FirstActivity.class);
+        Intent intent = new Intent(AccountActivity.this, LoginActivity.class);
         startActivity(intent);
 
     }

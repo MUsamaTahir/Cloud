@@ -104,9 +104,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     progressBar.setVisibility(View.GONE);
                                     if (task.isSuccessful()) {
                                         Toast.makeText(RegisterActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-                                        account();
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        startActivity(intent);
                                     } else {
                                         //display a failure message
+                                        Toast.makeText(RegisterActivity.this, "failed to register ", Toast.LENGTH_LONG).show();
+
                                     }
                                 }
                             });
@@ -117,11 +120,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
 
-    }
-    private void account()
-    {
-        Intent intent = new Intent(RegisterActivity.this, AccountActivity.class);
-        startActivity(intent);
     }
     @Override
     public void onClick(View v) {
