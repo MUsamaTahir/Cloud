@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_centerVertical="true"
+ android:orientation="vertical"
+ android:padding="@dimen/default_padding">
+
+ <EditText
+     android:id="@+id/edit_text_name"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:drawablePadding="@dimen/drawable_padding"
+     android:hint="@string/full_name"
+     android:nextFocusDown="@id/edit_text_email"
+     android:inputType="textPersonName" />
+
+     <EditText
+         android:id="@+id/edit_text_phone"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:drawablePadding="@dimen/drawable_padding"
+         android:hint="Phone Number"
+         android:inputType="number" />
+
+ <EditText
+     android:id="@+id/edit_text_city"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:drawablePadding="@dimen/drawable_padding"
+     android:hint="City"
+     android:inputType="text"
+     android:nextFocusDown="@id/edit_text_password" />
+
+
+ <EditText
+     android:id="@+id/edit_text_country"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:drawablePadding="@dimen/drawable_padding"
+     android:hint="Country"
+     android:inputType="text" />
+
+
+ <Button
+     android:id="@+id/button_save"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Save"
+     android:background="@color/colorPrimaryDark"
+     android:textColor="#fff"
+     android:textAllCaps="false" />
+
+</LinearLayout>
+
+<ProgressBar
+android:id="@+id/progressbar"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+android:layout_centerVertical="true" />
+
+</RelativeLayout>

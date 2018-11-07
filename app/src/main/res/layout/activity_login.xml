@@ -67,18 +67,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/colorPrimaryDark"
             android:text="Login"
-            android:textColor="@color/cardview_light_background" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimaryDark"
-            android:text="Login with Facebook"
-            android:textColor="@android:color/background_light" />
-
+            android:textColor="#ffffff" />
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
@@ -89,6 +78,10 @@
             android:onClick="EmailSignup"
             android:text="Sign Up using Email"
             android:textColor="@android:color/background_light" />
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"/>
 
         <!-- Link to Login Screen -->
 

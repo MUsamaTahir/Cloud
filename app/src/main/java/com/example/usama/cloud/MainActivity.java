@@ -2,9 +2,6 @@ package com.example.usama.cloud;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,8 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        auth= FirebaseAuth.getInstance();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new GalleryFragment()).commit();
-        } else if (id == R.id.nav_about) {
+        } else if (id == R.id.nav_profile) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new AboutFragment()).commit();
+                    new ProfileFragment()).commit();
         } else if (id == R.id.nav_location) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new LocationsFragment()).commit();
@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_share) {
 
+        }
+        else if (id == R.id.nav_logout) {
+            auth.signOut();
+            finish();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
